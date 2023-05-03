@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 app.secret_key = 'your_secret_key'  # Set your secret key for session management
 
-# #-----ADMIN CODE-----
+# #-----FLASK ADMIN CODE-----
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../mydatabase.db'
 # db = SQLAlchemy(app)
 
@@ -33,7 +33,7 @@ app.secret_key = 'your_secret_key'  # Set your secret key for session management
 #     if not user:
 #         return None
 #     return user
-# #-----ADMIN CODE-----
+# #-----FLASK ADMIN CODE-----
 
 # Configure Flask-Login
 login_manager = LoginManager()
