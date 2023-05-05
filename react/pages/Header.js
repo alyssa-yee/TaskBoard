@@ -5,13 +5,13 @@ export default function Header() {
         <nav className="nav-bar">
             <div className="nav-items">
                 <h3 id="nav-item">
-                    <Link href="/Task-Page/tasks">
-                        <span id="nav-text">TASKBOARD</span>
+                    <Link href="/GroupCreateJoin">
+                        <span id="nav-text">GROUPS</span>
                     </Link>
                 </h3>
                 <h3 id="nav-item">
-                    <Link href="/Collaborate">
-                        <span id="nav-text">COLLABORATE</span>
+                    <Link href="/Task-Page/tasks">
+                        <span id="nav-text">TASKBOARD</span>
                     </Link>
                 </h3>
                 <h3 id="nav-item">

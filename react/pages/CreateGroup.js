@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Layout from "./layout/layout.js"
+import Link from "next/link"
 
-export default function Collaborate() {
+export default function CreateGroup() {
     return(
         <Layout>
             <Head>
@@ -23,6 +24,9 @@ export default function Collaborate() {
                             </form>
                         </div>
                     </div>
+                    <Link href="/GroupCreateJoin">
+                        <span id="text-only">GO BACK</span>
+                    </Link>
                 </div>
         </Layout>
     )

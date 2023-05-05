@@ -6,7 +6,9 @@ import Layout from "../layout/layout.js"
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
 
 function Tasks() {
-    const [boards, setBoards] = useState(() => boardData)
+    const [boards, setBoards] = useState(() => boardData)  // Every time an item is dropped, the new information of the entire boardset is saved in 'boards'.
+
+    console.log("BOARD INFORMATION: ==> ", boards)
 
     // This function makes it so that when an item is dropped, it will stay where it was dropped.
     const handleDragDrop = (results) => {
