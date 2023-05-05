@@ -2,25 +2,25 @@ import React from 'react';
 
 const boardData = [
     {
-        id: 1,
+        id: "board-1",
         progress: "TASK LIST",
         items: [
-            { id: 10, task: "Buy shovel"},
-            { id: 20, task: "Find good spot in backyard"},
-            { id: 30, task: "Bury it. Bury it deep."},
-            { id: 40, task: "Get cookies for Andy :D"},
-            { id: 50, task: "test for long wall of text test for long wall of text test for long wall of text test for long wall of text test for long wall of text test for long wall of text test for long wall of text "}
+            { id: "task-1", task: "Buy shovel"},
+            { id: "task-2", task: "Find good spot in backyard"},
+            { id: "task-3", task: "Bury it. Bury it deep."},
+            { id: "task-4", task: "Get cookies for Andy :D"},
+            { id: "task-5", task: "test for long wall of text test for long wall of text test for long wall of text test for long wall of text test for long wall of text test for long wall of text test for long wall of text "}
         ]
     },
     {
-        id: 2,
+        id: "board-2",
         progress: "IN PROGRESS",
         items: [
-            { id: 11, task: "Cleaning"},
+            { id: "task-6", task: "Cleaning"},
         ]
     },
     {
-        id: 3,
+        id: "board-3",
         progress: "COMPLETE",
         items: []
     },

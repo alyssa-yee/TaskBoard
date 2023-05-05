@@ -3,10 +3,18 @@ import Popup from 'reactjs-popup';
 import { boardData } from "./data/boards"
 import Head from 'next/head'
 import Layout from "../layout/layout.js"
+import Link from "next/link"
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd"
+
 
 function Tasks() {
     const [boards, setBoards] = useState(() => boardData)  // Every time an item is dropped, the new information of the entire boardset is saved in 'boards'.
+    const [groupName, setGroupName] = useState(["Group 1", "Group 2"])
+
+    const [openDropDown, setOpenDropDown] = useState(false)
+    const handleOpen = () => {
+        setOpenDropDown(!openDropDown);
+      };
 
     console.log("BOARD INFORMATION: ==> ", boards)
 
@@ -72,15 +80,28 @@ function Tasks() {
     }
 
     return (
-        <Layout>
+        <Layout key={boards.id}>
             <Head>
                 <title>TaskBoard</title>
             </Head>
             <div>
                 <div>
+                    <div className="select-group">
+                        <button onClick={handleOpen}>Select Group</button>
+                        {openDropDown ? (
+                            <div>
+                                {groupName.map((group, i) => (
+                                    <div>
+                                        <Link href="tasks/">{group}</Link>
+                                    </div>
+                                ))}
+                            </div>
+
+                        ) : null}
+                        </div>
                     <div className="group">
                         <div id="group-name"> Group Name: </div>
-                        <div id="g-name">Meow</div>
+                        <div id="g-name">{groupName[0]}</div>
                     </div>
                     <div className="task-board">
                         <div className="add">
@@ -134,7 +155,7 @@ function Tasks() {
 
 function BoardCards({ progress, items, id }) {
     return (
-        <Droppable droppableId={id}>
+        <Droppable droppableId={id} key={id}>
             {(provided) => (
             <div {...provided.droppableProps} ref={provided.innerRef} className="task-container">
                 <div id="progress">{progress}</div >
