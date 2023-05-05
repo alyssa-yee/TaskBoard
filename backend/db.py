@@ -1,7 +1,7 @@
 import sqlite3
 
 def add_user(username, password):
-    conn = sqlite3.connect('mydatabase.db')
+    conn = sqlite3.connect('data.db')
     print(conn)
     cursor = conn.cursor()
     cursor.execute(
@@ -13,7 +13,7 @@ def add_user(username, password):
     conn.close()
 
 def find_user(username, password):
-    conn = sqlite3.connect('mydatabase.db')
+    conn = sqlite3.connect('data.db')
     cursor = conn.cursor()
     cursor.execute(
         "SELECT * FROM users WHERE username = ? AND password = ?", 
