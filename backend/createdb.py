@@ -1,15 +1,28 @@
 import sqlite3
 
 def create_database():
-    conn = sqlite3.connect('mydatabase.db')
+    conn = sqlite3.connect('data.db')
     cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE users (
-            id INTEGER PRIMARY KEY,
-            username TEXT UNIQUE,
-            password TEXT
-        )
-    ''')
+    conn.execute('''CREATE TABLE users
+        (user_id     INT PRIMARY KEY     NOT NULL,
+         username    TEXT                NOT NULL,
+         passcode    TEXT                NOT NULL);''')
+
+    conn.execute('''CREATE TABLE groups
+        (group_id      INT PRIMARY KEY    NOT NULL,
+         group_name     TEXT               NOT NULL);''')
+
+    conn.execute('''CREATE TABLE groupinfo
+        (group_info_id  INT PRIMARY KEY    NOT NULL,
+         user_id        INT                NOT NULL,
+         group_id       INT                NOT NULL);''')
+
+    conn.execute('''CREATE TABLE task
+        (task_id            INT PRIMARY KEY     NOT NULL,
+         task_name          TEXT                NOT NULL,
+         task_status        TEXT                NOT NULL,
+         group_id           INT                 NOT NULL);''')
+    
     conn.commit()
     cursor.close()
     conn.close()
